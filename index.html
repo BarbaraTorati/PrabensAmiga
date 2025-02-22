@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns Pri! 🎉</title>
+    <style>
+        body {
+            background-color: #ffe4e1;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 8vw;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff69b4, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: glitter 1s infinite alternate;
+            margin: 20px 0;
+        }
+
+        @keyframes glitter {
+            0% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+
+        .message {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .polaroids {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            width: 40vw;
+            max-width: 150px;
+            text-align: center;
+            transform: rotate(-3deg);
+            transition: transform 0.3s;
+        }
+
+        .polaroid img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .polaroid:hover {
+            transform: rotate(3deg) scale(1.05);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: float 1.5s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Parabéns Pri! 🎉</h1>
+    <div class="container">
+        <div class="polaroids">
+            <div class="polaroid"><img src="sua_foto1.jpg" alt="Foto 1"><p>Amigas para sempre!</p></div>
+            <div class="polaroid"><img src="sua_foto2.jpg" alt="Foto 2"><p>Melhores momentos!</p></div>
+        </div>
+        <div class="message">
+            <p>Pri, hoje é um dia especial porque é o seu dia! 🎂🥳</p>
+            <p>Que sua vida seja cheia de alegria, amor e muitos momentos incríveis! 💖</p>
+            <p>Obrigada por ser essa amiga maravilhosa, que ilumina a vida de todos ao redor! ✨</p>
+            <p>Com muito carinho, Bárbara ❤️</p>
+        </div>
+        <div class="polaroids">
+            <div class="polaroid"><img src="sua_foto3.jpg" alt="Foto 3"><p>Risos e diversão!</p></div>
+            <div class="polaroid"><img src="sua_foto4.jpg" alt="Foto 4"><p>Mais memórias lindas!</p></div>
+        </div>
+    </div>
+
+    <script>
+        document.body.addEventListener("click", function(event) {
+            let heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
+            
+            heart.style.left = `${event.clientX}px`;
+            heart.style.top = `${event.clientY}px`;
+            
+            setTimeout(() => { heart.remove(); }, 1000);
+        });
+    </script>
+</body>
+</html>
